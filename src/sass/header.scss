@@ -1,0 +1,30 @@
+header {
+  padding: 30px 20px;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__logo {
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  font-size: 3.2rem;
+  text-shadow: 1px 1px 3px rgb(0 0 0 / 50%);
+}
+
+.description__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(212, 212, 212, 0.7);
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.description__content {
+  text-shadow: 1px 1px 3px rgb(0 0 0 / 50%);
+}
