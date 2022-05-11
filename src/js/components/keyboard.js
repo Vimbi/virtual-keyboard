@@ -337,7 +337,7 @@ const Keyboard = {
     const element = this.getDomElementToHighlight(evt);
     if (evt.keyCode === 20) {
       this.toggleCapsLock();
-    } else {
+    } else if (element) {
       element.domElement.classList.add('keyboard--key-active');
     }
     if (evt.keyCode === 18 && evt.ctrlKey) {
@@ -353,7 +353,7 @@ const Keyboard = {
     evt.preventDefault();
     const element = this.getDomElementToHighlight(evt);
     if (evt.keyCode !== 20) {
-      element.domElement.classList.remove('keyboard--key-active');
+      if (element) element.domElement.classList.remove('keyboard--key-active');
     }
     if (evt.keyCode === 16) {
       this.redraw('shiftOff');
@@ -362,7 +362,8 @@ const Keyboard = {
 
   print(key, evt) {
     this.elements.input.focus();
-    let value = key[this.properties.lang] || key.value;
+    let value;
+    if (key) value = key[this.properties.lang] || key.value;
     if (value) {
       if (this.properties.capsLock) {
         value = value.toUpperCase();
